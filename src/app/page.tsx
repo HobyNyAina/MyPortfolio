@@ -1,11 +1,7 @@
-import Hero from '../components/Hero';
-import Services from '../components/Services';
+import HomePage from '@/app/(main)/page';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
-      <Hero />
-      <Services />
-    </>
+    <HomePage />
   );
 }

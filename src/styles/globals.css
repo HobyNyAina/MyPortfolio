@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@layer components {
+  .sidebar-tooltip {
+    visibility: hidden;
+    position: absolute;
+    left: 100%;
+    margin-left: 1rem;
+    background-color: rgb(31, 41, 55);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+  }
+  .sidebar-icon:hover .sidebar-tooltip {
+    visibility: visible;
+  }
+}
