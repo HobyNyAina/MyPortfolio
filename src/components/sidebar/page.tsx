@@ -31,7 +31,7 @@ export default function Sidebar() {
           </div>
           
           {/* Icônes */}
-          <nav className="flex flex-col items-center space-y-2">
+          <nav className="flex flex-col items-center space-y-3">
             {NAV_ITEMS.map((item) => (
               <Link 
                 href={item.path} 
@@ -41,10 +41,10 @@ export default function Sidebar() {
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className={`p-5 rounded-full transition-colors text-3xl ${
+                  className={`p-3 rounded-full transition-colors bg-gray-700 text-black text-xl ${
                     activeItem === item.path
-                      ? 'bg-emerald-500/20 text-emerald-400'
-                      : 'text-gray-400 hover:text-white'
+                      ? 'bg-sky-400'
+                      : 'text-gray-400 hover:bg-sky-400 hover:text-black'
                   }`}
                 >
                   {<item.icon/>}
