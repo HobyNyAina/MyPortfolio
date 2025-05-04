@@ -4,7 +4,7 @@ import { NAV_ITEMS } from '@/config/navigation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import profilImage from '@/assets/images/profil.png'
+import profilImage from '@/assets/images/profil.jpg'
 import MobileNavbar from '@/components/MobileSidebar/page'
 import { useState } from 'react'
 
