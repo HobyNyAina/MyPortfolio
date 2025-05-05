@@ -1,7 +1,6 @@
-// components/sidebar/desktop-sidebar.tsx
 'use client';
 
-import { Sheet, SheetContent } from '@/ui/sheet';
+import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { NavItem } from '@/ui/nav-item';
 import { ProfileImage } from '@/ui/profile-image';
 import { useActiveNav }  from '@/hooks/use-active-nav';
