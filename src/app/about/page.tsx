@@ -1,74 +1,125 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import Image from 'next/image';
+import profilImage from '@/assets/images/profil.jpg';
+import Skill from '@/app/skills/page';
+import { motion } from 'framer-motion';
+
+type Stat = {
+  value: string;
+  label: string;
+};
+
+const stats: Stat[] = [
+  { value: '10+', label: 'NUMBERS OF EXPERIENCE' },
+  { value: '360+', label: 'COMPLETED PROJECTS' },
+  { value: '332+', label: 'ATTEND MEETINGS' },
+  { value: '630+', label: 'MAKE BIG SOFTWARE' },
+  { value: '890+', label: 'HAPPY CUSTOMERS' },
+  { value: '65+', label: 'INTERNATIONAL AWARDS WON' },
+];
 
 const skills = [
-  'UI/UX Design',
-  'Développement Frontend',
-  'Responsive Design',
-  'Animation',
-  'Branding',
-  'Photographie'
-]
+  { label: 'HTML5 / CSS3', percent: 90 },
+  { label: 'JavaScript', percent: 85 },
+  { label: 'React / Next.js', percent: 45 },
+  { label: 'Node.js', percent: 75 },
+  { label: 'Tailwind CSS', percent: 90 },
+  { label: 'UI/UX Design', percent: 80 },
+];
 
 export default function About() {
   return (
-    <section id="about" className="py-20">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+    <>
+      {/* ABOUT ME */}
+      <section className="bg-[#0f172a] text-white py-20 px-4 md:px-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Texte décoratif en arrière-plan */}
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 0.05, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute top-[70] inset-0 text-9xl md:text-9xl font-bold text-white select-none pointer-events-none z-0"
         >
-          <div>
-            <Badge variant="secondary" className="mb-4">
-              À propos de moi
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Designer créatif avec passion pour l'excellence
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Avec plus de 8 ans d'expérience dans le design et le développement,
-              j'ai aidé des entreprises de toutes tailles à créer des identités
-              visuelles fortes et des expériences utilisateur exceptionnelles.
-            </p>
-            <p className="text-muted-foreground mb-8">
-              Mon approche combine une esthétique moderne avec des solutions
-              techniques robustes pour des résultats qui impressionnent et
-              fonctionnent parfaitement.
-            </p>
-            <Button size="lg">En savoir plus</Button>
+          Resume
+        </motion.span>
+
+        {/* Titre principal */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative text-6xl font-bold mb-20 z-10"
+        >
+          ABOUT <span className="text-sky-500">ME</span>
+        </motion.h2>
+
+        <div className="grid md:grid-cols-2 gap-10 items-center z-10 relative">
+          {/* Infos personnelles */}
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="relative w-48 h-60">
+              <div className="absolute inset-0 border-[3px] border-sky-500 -translate-x-2 -translate-y-2" />
+              <Image
+                src={profilImage}
+                alt="Profile"
+                fill
+                className="rounded shadow-md object-cover"
+                sizes="192px"
+                priority
+              />
+            </div>
+
+            <div className="text-sm md:text-base space-y-1 text-left">
+              <p><strong>Name:</strong> Sitraka Ny Aina</p>
+              <p><strong>Age:</strong> 26</p>
+              <p><strong>Phone:</strong> +261 38 99 262 17</p>
+              <p><strong>Skype:</strong> Briscoe_fc</p>
+              <p><strong>Email:</strong> FrancisMBriscoe@jourrapide.com</p>
+              <p><strong>Address:</strong> 4080 Berkshire Circle</p>
+              <p><strong>Languages:</strong> French, English</p>
+              <p><strong>Nationality:</strong> USA</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {skills.map((skill, index) => (
+          {/* Statistiques */}
+          <div className="grid grid-cols-2 gap-4 text-center">
+            {stats.map((stat, idx) => (
               <motion.div
-                key={skill}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-6 border rounded-lg hover:bg-accent transition-colors"
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="border border-gray-700 p-6 rounded shadow 
+                           hover:scale-105 transition-transform duration-200"
               >
-                <h3 className="font-medium">{skill}</h3>
-                <div className="w-full bg-gray-200 h-1 mt-2">
-                  <motion.div
-                    className="h-full bg-primary"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${Math.random() * 50 + 50}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                  />
-                </div>
+                <p className="text-3xl font-bold text-sky-500">{stat.value}</p>
+                <p className="text-xs text-gray-300 mt-2 uppercase">{stat.label}</p>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
-  )
+
+      {/* MY SKILL */}
+      <section className="bg-[#0f172a] text-white py-5 px-4 md:px-16">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-6xl font-bold mb-15"
+          >
+            <span className="text-sky-500">MY</span> SKILL
+          </motion.h2>
+          
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">
+            {skills.map((skill, index) => (
+              <Skill key={index} {...skill} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
