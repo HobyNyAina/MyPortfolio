@@ -52,7 +52,7 @@ const socialIconVariants = {
 const buttonVariants = {
   initial: { backgroundColor: 'rgba(0,0,0,0)' },
   hover: { 
-    backgroundColor: '#10B981',
+    backgroundColor: '#2196F3',
     transition: { duration: 0.3 }
   },
   tap: { scale: 0.95 }
@@ -68,7 +68,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-[#0c1022] text-white px-4 left-30">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-[#0c1022] text-white px-4">
       <motion.section 
         className="text-center max-w-4xl"
         initial="hidden"
@@ -80,7 +80,7 @@ export default function Home() {
           variants={itemVariants}
         >
           I am <motion.span 
-            className="text-green-500"
+            className="text-sky-500"
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -89,7 +89,7 @@ export default function Home() {
         </motion.h1>
         
         <motion.h2 
-          className="text-xl md:text-3xl font-semibold mt-4 text-green-400"
+          className="text-xl md:text-3xl font-semibold mt-4 text-sky-400"
           variants={itemVariants}
         >
           SOFTWARE DEVELOPER
@@ -137,7 +137,7 @@ export default function Home() {
         >
           <motion.a
             href="#"
-            className={`flex items-center justify-center gap-2 border border-green-500 px-6 py-3 rounded-md mx-auto w-max ${downloadHovered ? 'bg-green-500 text-white' : 'text-green-500'}`}
+            className={`flex items-center justify-center gap-2 border border-sky-500 px-6 py-3 rounded-md mx-auto w-max ${downloadHovered ? 'bg-sky-500 text-white' : 'text-sky-500'}`}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
