@@ -11,32 +11,38 @@ export const NAV_ITEMS: NavigationConfig = [
       { 
         name: 'Home', 
         path: '/', 
-        icon: IoHome
+        icon: IoHome,
+        hidden: false,
       },
       { 
         name: 'About', 
         path: '/about', 
-        icon: FaUserAlt
+        icon: FaUserAlt,
+        hidden: false,
       },
       { 
         name: 'Services', 
         path: '/services', 
-        icon: MdDesignServices
+        icon: MdDesignServices,
+        hidden: true,
       },
       { 
         name: 'Portfolio', 
         path: '/portfolio', 
-        icon: FaWindowMaximize 
+        icon: FaWindowMaximize,
+        hidden: false,
       },
       { 
         name: 'Blog', 
         path: '/blog', 
-        icon: BiSolidMessage 
+        icon: TbMailOpenedFilled,
+        hidden: true,
       },
       { 
         name: 'Contact', 
         path: '/contact', 
-        icon: TbMailOpenedFilled 
+        icon: BiSolidMessage,
+        hidden: false,
       },
 
 ];

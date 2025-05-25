@@ -4,6 +4,7 @@ export type NavItem = {
   name: string;
   path: string;
   icon: IconType;
+  hidden?: boolean;
   subItems?: NavItem[];
 };
 
