@@ -34,7 +34,7 @@ export default function Skills({ label, percent }: SkillCircleProps) {
           cy={radius}
         />
         <motion.circle
-          stroke="#2196F3"
+          stroke="#00BDC8"
           fill="transparent"
           strokeWidth={stroke}
           r={normalizedRadius}
