@@ -19,15 +19,16 @@ export const DesktopSidebar = () => {
           <ProfileImage size="lg" />
           
           <nav className="flex-1 flex flex-col items-center space-y-6">
-            {NAV_ITEMS.map((item) => (
-              <NavItem
-                key={item.path}
-                icon={<item.icon/>}
-                isActive={activeItem === item.path}
-                onClick={() => setActiveItem(item.path)}
-              />
-            ))}
-          </nav>
+          {NAV_ITEMS.filter(item => !item.hidden).map((item) => (
+            <NavItem
+              key={item.path}
+              icon={<item.icon />}
+              isActive={activeItem === item.path}
+              onClick={() => setActiveItem(item.path)}
+            />
+          ))}
+        </nav>
+
         </div>
       </SheetContent>
     </Sheet>
