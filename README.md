@@ -59,5 +59,4 @@ MyPortfolio/
 ```
 
 👤 Auteur
-
-Projet développé par HobyNyAina.
+Projet développé par HobyNyAina 
