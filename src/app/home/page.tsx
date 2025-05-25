@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub, FaDownload } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaDownload } from 'react-icons/fa';
 
 // Custom hook for hover effect
 const useHover = () => {
@@ -52,7 +52,7 @@ const socialIconVariants = {
 const buttonVariants = {
   initial: { backgroundColor: 'rgba(0,0,0,0)' },
   hover: { 
-    backgroundColor: '#2196F3',
+    backgroundColor: '#00BDC8',
     transition: { duration: 0.3 }
   },
   tap: { scale: 0.95 }
@@ -79,8 +79,8 @@ export default function Home() {
           className="text-3xl md:text-5xl font-bold mb-2"
           variants={itemVariants}
         >
-          I am <motion.span 
-            className="text-sky-500"
+          <motion.span 
+            className="text-[#00BDC8]"
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -89,10 +89,9 @@ export default function Home() {
         </motion.h1>
         
         <motion.h2 
-          className="text-xl md:text-3xl font-semibold mt-4 text-sky-400"
+          className="text-xl md:text-3xl font-semibold mt-4 text-[#00BDC8]"
           variants={itemVariants}
-        >
-          SOFTWARE DEVELOPER
+        >DEVELLOPEUR FULL STACK
         </motion.h2>
         
         <motion.p 
@@ -111,14 +110,13 @@ export default function Home() {
         >
           {[
             { icon: <FaFacebookF />, href: "#" },
-            { icon: <FaTwitter />, href: "#" },
-            { icon: <FaLinkedinIn />, href: "#" },
-            { icon: <FaGithub />, href: "#" }
+            { icon: <FaLinkedinIn />, href: "https://www.linkdin.com/in/sitraka-ny-aina" },
+            { icon: <FaGithub />, href: "https://github.com/HobyNyAina" }
           ].map((social, index) => (
             <motion.a
               key={index}
               href={social.href}
-              className="text-gray-400 text-xl"
+              className="p-2 bg-gray-800 rounded-full hover:bg-[#00BDC8] transition-colors"
               variants={socialIconVariants}
               whileHover="hover"
               whileTap="tap"
@@ -129,15 +127,13 @@ export default function Home() {
             </motion.a>
           ))}
         </motion.div>
-
-        {/* Download CV Button */}
         <motion.div 
           className="mt-10"
           variants={itemVariants}
         >
           <motion.a
             href="#"
-            className={`flex items-center justify-center gap-2 border border-sky-500 px-6 py-3 rounded-md mx-auto w-max ${downloadHovered ? 'bg-sky-500 text-white' : 'text-sky-500'}`}
+            className={`flex items-center justify-center gap-2 border border-[#00BDC8] px-6 py-3 rounded-md mx-auto w-max ${downloadHovered ? 'bg-sky-500 text-white' : 'text-[#00BDC8]'}`}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
