@@ -13,7 +13,7 @@
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/) *(si utilisé)*
+- [Tailwind CSS](https://tailwindcss.com/)
 - [ESLint](https://eslint.org/) pour le linting du code.
 
 ## ⚙️ Installation
