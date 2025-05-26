@@ -60,4 +60,4 @@ MyPortfolio/
 
 👤 Auteur
 
-Projet développé par HobyNyAina 
+Projet développé par **Sitraka Ny Aina** 
