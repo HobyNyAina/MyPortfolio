@@ -34,7 +34,7 @@ export default function Competence() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         className="relative text-6xl font-bold mb-20 z-10"
-                    ><span className="text-[#00BDC8]">Compétences</span>
+                    ><span className="text-[#00BDC8]">COMPETENCES</span>
                     </motion.h2>
                     <div className="gap-10 items-center z-10 relative">
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">

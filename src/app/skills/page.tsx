@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 type SkillCircleProps = {
   label: string;
-  percent: number; // Ex: 88
+  percent: number;
 };
 
 export default function Skills({ label, percent }: SkillCircleProps) {
