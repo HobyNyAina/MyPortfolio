@@ -19,7 +19,7 @@ export default function Skills({ label, percent }: SkillCircleProps) {
 
   useEffect(() => {
     controls.start({ strokeDashoffset });
-  }, [strokeDashoffset]);
+  }, [strokeDashoffset], controls);
 
   return (
     <div className="flex flex-col items-center">
