@@ -23,7 +23,7 @@ export default function CoverLetter() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="relative text-6xl font-bold mb-16 z-10"
-            ><span className="text-[#00BDC8]">Résume</span>
+            ><span className="text-[#00BDC8]">RESUME</span>
             </motion.h2>
         </div>
         </section>
