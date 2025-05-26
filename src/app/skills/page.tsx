@@ -1,15 +1,57 @@
-// src/app/skills/page.tsx
 'use client';
 
-import SkillCircle from '@/components/SkillCircle';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
 
-export default function Skills() {
+type SkillCircleProps = {
+  label: string;
+  percent: number;
+};
+
+export default function Skills({ label, percent }: SkillCircleProps) {
+  const radius = 57;
+  const stroke = 7;
+  const normalizedRadius = radius - stroke * 2;
+  const circumference = normalizedRadius * 2 * Math.PI;
+  const strokeDashoffset = circumference - (percent / 100) * circumference;
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({ strokeDashoffset });
+  }, [strokeDashoffset]);
+
   return (
-    <div className="grid grid-cols-2 gap-8">
-      <SkillCircle label="React" percent={85} />
-      <SkillCircle label="Next.js" percent={80} />
-      <SkillCircle label="TypeScript" percent={75} />
-      <SkillCircle label="Tailwind CSS" percent={70} />
+    <div className="flex flex-col items-center">
+      <div className="relative">
+      <svg height={radius * 2} width={radius * 2} className="mb-2 rotate-[-90deg]">
+        <circle
+          stroke="#1e293b"
+          fill="transparent"
+          strokeWidth={stroke}
+          r={normalizedRadius}
+          cx={radius}
+          cy={radius}
+        />
+        <motion.circle
+          stroke="#00BDC8"
+          fill="transparent"
+          strokeWidth={stroke}
+          r={normalizedRadius}
+          cx={radius}
+          cy={radius}
+          strokeDasharray={circumference}
+          strokeLinecap="round"
+          animate={controls}
+          initial={{ strokeDashoffset: circumference }}
+          transition={{ duration: 1.2 }}
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-white font-bold text-2xl">{percent}%</span>
+        </div>
+    </div>
+      <span className="text-sm text-gray-300 mt-1">{label}</span>
     </div>
   );
 }
