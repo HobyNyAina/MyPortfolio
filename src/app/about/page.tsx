@@ -36,7 +36,6 @@ export default function About() {
           About
         </motion.span>
 
-        {/* Titre principal */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +46,6 @@ export default function About() {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-10 items-center z-10 relative">
-          {/* Infos personnelles */}
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="relative w-48 h-60">
               <div className="absolute inset-0 border-[3px] border-[#00BDC8] -translate-x-2 -translate-y-2" />
@@ -62,12 +60,12 @@ export default function About() {
             </div>
 
             <div className="text-sm md:text-base space-y-1 text-left">
-              <p><strong>Name:</strong> Sitraka Ny Aina</p>
-              <p><strong>Phone:</strong> +261 38 99 262 17</p>
+              <p><strong>Nom:</strong> Sitraka Ny Aina</p>
+              <p><strong>Téléphone:</strong> +261 38 99 262 17</p>
               <p><strong>Email:</strong> hobynyaina.sitraka@gmail.com</p>
               <p><strong>Address:</strong> Lot IC 177 ter A Soamahavory</p>
-              <p><strong>Languages:</strong> French</p>
-              <p><strong>Nationality:</strong> Malgache</p>
+              <p><strong>Langue:</strong> Français</p>
+              <p><strong>Nationalé:</strong> Malgache</p>
             </div>
           </div>
 
