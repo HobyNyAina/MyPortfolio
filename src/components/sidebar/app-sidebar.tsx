@@ -8,12 +8,16 @@ import { NAV_ITEMS } from '@/config/navigation';
 
 import React from 'react';
 
-export const DesktopSidebar = () => {
+interface AppSidebarProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
+
+export function AppSidebar({ isOpen, setIsOpen }: AppSidebarProps) {
   const { activeItem, setActiveItem } = useActiveNav();
-  const [isOpen, setIsOpen] = React.useState(true);
 
   return (
-    <Sheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetContent side="left" className="w-20 p-0 border-r border-gray-800">
         <div className="flex flex-col h-full items-center py-8 space-y-10">
           <ProfileImage size="lg" />
@@ -33,4 +37,4 @@ export const DesktopSidebar = () => {
       </SheetContent>
     </Sheet>
   );
-};
+}

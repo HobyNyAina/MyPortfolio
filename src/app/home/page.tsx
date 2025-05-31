@@ -60,7 +60,7 @@ const buttonVariants = {
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
-  const [downloadHovered, downloadHoverProps] = useHover();
+  const [downloadHovered] = useHover();
   
   useEffect(() => {
     setIsMounted(true);
@@ -132,10 +132,8 @@ export default function Home() {
           variants={itemVariants}
         >
           <motion.a
-            href="#"
             className={`flex items-center justify-center gap-2 border border-[#00BDC8] px-6 py-3 rounded-md mx-auto w-max ${downloadHovered ? 'bg-sky-500 text-white' : 'text-[#00BDC8]'}`}
             variants={buttonVariants}
-            {...downloadHoverProps}
           >
             <FaDownload className="text-sm" />
             <span>Download CV</span>
