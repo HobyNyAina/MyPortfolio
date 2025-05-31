@@ -1,19 +1,18 @@
-'use client';
-
+import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 
-type SkillCircleProps = {
-  label: string;
-  percent: number;
-};
+interface SkillCircleProps {
+  skill: string;
+  level: number;
+}
 
-export default function Skills({ label, percent }: SkillCircleProps) {
+function SkillCircle({ skill, level }: SkillCircleProps) {
   const radius = 57;
   const stroke = 7;
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (percent / 100) * circumference;
+  const strokeDashoffset = circumference - (level / 100) * circumference;
 
   const controls = useAnimation();
 
@@ -48,10 +47,19 @@ export default function Skills({ label, percent }: SkillCircleProps) {
         />
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white font-bold text-2xl">{percent}%</span>
+          <span className="text-white font-bold text-2xl">{level}%</span>
         </div>
     </div>
-      <span className="text-sm text-gray-300 mt-1">{label}</span>
+      <span className="text-sm text-gray-300 mt-1">{skill}</span>
+    </div>
+  );
+}
+
+export default function SkillsPage() {
+  return (
+    <div>
+      <SkillCircle skill="JavaScript" level={90} />
+      <SkillCircle skill="React" level={85} />
     </div>
   );
 }
