@@ -97,10 +97,9 @@ export default function Home() {
         <motion.p 
           className="text-gray-400 mt-6 mx-auto leading-relaxed"
           variants={itemVariants}
-        >
-          Full Stack Web Developer and Web Application specialist with expertise in both front-end and back-end development.
-          Experienced with all stages of the development cycle for dynamic web projects. Proficient in JavaScript (ES6+), 
-          Node.js, HTML5, CSS3, React.js, and MongoDB database systems.
+        >Je conçois des applications modernes, performantes et responsive. 
+        Grâce à mes expériences en entreprise et à mes projets personnels, je maîtrise des outils et frameworks tels que Next.js, Symfony, TailwindCSS et Magento. 
+        Curieux, autonome et rigoureux, je suis passionné par le développement d’interfaces intuitives et la création de solutions adaptées aux besoins réels des utilisateurs.
         </motion.p>
 
         {/* Social Icons */}
