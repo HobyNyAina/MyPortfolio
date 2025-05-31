@@ -135,8 +135,6 @@ export default function Home() {
             href="#"
             className={`flex items-center justify-center gap-2 border border-[#00BDC8] px-6 py-3 rounded-md mx-auto w-max ${downloadHovered ? 'bg-sky-500 text-white' : 'text-[#00BDC8]'}`}
             variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
             {...downloadHoverProps}
           >
             <FaDownload className="text-sm" />

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
@@ -18,7 +20,7 @@ function SkillCircle({ skill, level }: SkillCircleProps) {
 
   useEffect(() => {
     controls.start({ strokeDashoffset });
-  }, [strokeDashoffset], controls);
+  }, [strokeDashoffset, controls]);
 
   return (
     <div className="flex flex-col items-center">
@@ -56,6 +58,12 @@ function SkillCircle({ skill, level }: SkillCircleProps) {
 }
 
 export default function SkillsPage() {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start("visible");
+  }, [controls]);
+
   return (
     <div>
       <SkillCircle skill="JavaScript" level={90} />
